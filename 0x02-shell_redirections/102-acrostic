@@ -1,10 +1,2 @@
 #!/bin/bash
-
-decoded_message=""
-
-while read -r line || [[ -n "$line" ]]; do
-    first_char=$(echo "$line" | cut -c1)
-    decoded_message+="$first_char"
-done < "${1:-/dev/stdin}"
-
-echo "$decoded_message"
+cut -c 1 | paste -s -d ''
